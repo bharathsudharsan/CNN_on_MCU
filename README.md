@@ -14,7 +14,6 @@ In the remainder, we brief each optimizer component of the proposed end-to-end m
 
 **Graph Optimization:** The graph of an ML model contains nodes and edges. We provide an implementation of Graph Optimizers that users can leverage to optimize the model graphs to improve the computational performance while reducing peak SRAM (memory) usage on MCUs, thus enabling the execution of larger models on tiny memory footprints.
 
-
-In our paper, we apply all suitable optimizers before, during, and after the training of CNNs, and report the memory conservation and inference speedups as an overall optimization results analysis. Additionally, we present joint model optimization methods, workload, and kernel optimization techniques.
+In our paper, we apply all suitable components of our optimization sequence before, during, and after the training of CNNs, and report the memory conservation and inference speedups. We additionally present joint model optimization methods, workload, and kernel optimization techniques.
 
 
