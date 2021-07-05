@@ -12,7 +12,9 @@ In the notebooks, we use the standard [MNIST Fashion](https://www.kaggle.com/zal
 
 Both these datasets are imported via the *tf.keras.dataset.name* function with its default train and test sets. After importing, we apply all suitable optimizers before, during, and after training CNNs and analyze the memory conservation, accuracy, and inference speedups. In the following, we breif each optimization component component whose implementaions are provided in the notebooks.
 
-**Pre-training Optimization** We first apply the pruning technique on CNNs and present the changes in inference time and size in below Figure c. Similarly, we also perform quantization-aware training of CNNs and show the changes in below Figure b. 
+### Pre-training Optimization
+
+We first apply the pruning technique on CNNs and present the changes in inference time and size in below Figure c. Similarly, we also perform quantization-aware training of CNNs and show the changes in below Figure b. 
 
 ![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Pre-training_optimization.png)
 
