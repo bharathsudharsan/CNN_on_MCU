@@ -10,7 +10,7 @@ In the notebooks, we use the standard [MNIST Fashion](https://www.kaggle.com/zal
 
 ![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Original_CNN_architecture.png)
 
-Both these datasets are imported via the *tf.keras.dataset.name* function with its default train and test sets. After importing, we apply all suitable optimizers before, during, and after training CNNs and analyze the memory conservation, accuracy, and inference speedups. In the following, we breif each optimization component component whose implementaions are provided in the notebooks.
+Both these datasets are imported via the *tf.keras.dataset.name* function with its default train and test sets. After importing, we apply all suitable optimizers before, during, and after training CNNs and analyze the memory conservation, accuracy, and inference speedups. In the following, we brief each optimization component whose implementations are provided in the notebooks.
 
 ### Pre-training Optimization
 
@@ -24,7 +24,7 @@ We performed **Int with float fallback quantization** on original CNNs and show 
 
 ![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Int_with_float_quantization_results.png)
 
-Here we quantized the original CNN's Float32 weights and activations to Float16 values. Users can use this **Float16 quantization** when they want to achieve reasonable compression rates (we obtain approx. 6x compression), without loss of precision (we experience only 0.01 % loss in accuracy). Also, Float16 models run on small CPUs without modification. In below Figure e, we show the Float16 quantized model's architecture, inference time, and size changes. 
+Here we quantized the original CNN's Float32 weights and activations to Float16 values. Users can use this **Float16 quantization** when they want to achieve reasonable compression rates (we obtain approx. 6x compression) without loss of precision (we experience only 0.01 % loss in accuracy). Also, Float16 models run on small CPUs without modification. In below Figure e, we show the Float16 quantized model's architecture, inference time, and size changes. 
 
 ![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/float16_quantization_results.png)
 
@@ -34,7 +34,7 @@ We also converted the CNN's weights & activation to 8-bit integers and show its 
 
 ### Operations and Graph Optimization
 
-When designing ML models for tiny IoT hardware, only limited operations can be used to keep the cost low. Over 90% arithmetic operations are used by convolutional (CONV) layers. So, we already convert floating-point operations into int-8 (fixed point) during post-training quantization. Here, as shown in Figure below, we decompose (depthwise separation) the 2-D CONVs, followed by 1-D CONVs, aiming to reduce parameters and operations count. When using this depth-separation concept on 3D filters, a regular 3D convolution uses C * A * B multiplications, whereas a depth-separable 3D convolution only requires C + A + B multiplications.
+When designing ML models for tiny IoT hardware, only limited operations can be used to keep the cost low. Over 90% of arithmetic operations are used by convolutional (CONV) layers. So, we already convert floating-point operations into int-8 (fixed point) during post-training quantization. Here, as shown in Figure below, we decompose (depthwise separation) the 2-D CONVs, followed by 1-D CONVs, aiming to reduce parameters and operations count. When using this depth-separation concept on 3D filters, a regular 3D convolution uses C * A * B multiplications, whereas a depth-separable 3D convolution only requires C + A + B multiplications.
 
 ![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Operations_optimization.png)
 
@@ -48,8 +48,8 @@ We implemented and performed all applicable arithmetic simplification rewrites a
 
 We performed analysis based on the experiment results and report the best optimization sequence for:
 
-**Smallest Model Size:** Graph optimized then integer with float fallback quantized version is only 22.5 KB, i.e., 12.06 x times smaller than original CNN. 
+**Smallest Model Size:**  When users want the smallest possible trained model, we recommend performing Graph optimized then integer with float fallback quantized version is only 22.5 KB, i.e., 12.06 x times smaller than original CNN. 
 
-**Accuracy Preservation:** Graph optimized then integer only quantized version. For MNIST Fashion, the accuracy increased by 0.27 % and by 0.13 % for MNIST Digits.
+**Accuracy Preservation:** When the target hardware can accommodate a few extra KB, naturally we would try to fit the top-performing model. In such cases, we recommend to load and use the Graph optimized then integer only quantized version. For MNIST Fashion, the accuracy increased by 0.27 % and by 0.13 % for MNIST Digits.
 
-**Fast Inference:** Operations optimized then float16 quantized version produces the fastest unit inference results in 0.06 ms.
+**Fast Inference:**  For real-time applications, we naturally tend to load and use the fastest inference results-producing models. In such cases, we recommend the Operations optimized then float16 quantized version produces the fastest unit inference results in 0.06 ms.
