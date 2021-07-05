@@ -14,21 +14,21 @@ Both these datasets are imported via the *tf.keras.dataset.name* function with i
 
 ### Pre-training Optimization
 
-We first apply the pruning technique on CNNs and present the changes in inference time and size in below Figure c. Similarly, we also perform quantization-aware training of CNNs and show the changes in below Figure b. 
+We first apply the **pruning** technique on CNNs and present the changes in inference time and size in below Figure c. Similarly, we also perform **quantization-aware training** of CNNs and show the changes in below Figure b. 
 
 ![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Pre-training_optimization.png)
 
 ### Post-training Optimization
 
-We performed Int with float fallback quantization on original CNNs and show its architecture and performance in below Figure d, next to other quantization results.
+We performed **Int with float fallback quantization** on original CNNs and show its architecture and performance in below Figure d.
 
 ![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Int_with_float_quantization_results.png)
 
-Here we quantized the original CNN's Float32 weights and activations to Float16 values. Users can use this Float16 quantization when they want to achieve reasonable compression rates (we obtain approx. 6x compression), without loss of precision (we experience only 0.01 % loss in accuracy). Also, Float16 models run on small CPUs without modification. In below Figure e, we show the Float16 quantized model's architecture, inference time, and size changes. 
+Here we quantized the original CNN's Float32 weights and activations to Float16 values. Users can use this **Float16 quantization** when they want to achieve reasonable compression rates (we obtain approx. 6x compression), without loss of precision (we experience only 0.01 % loss in accuracy). Also, Float16 models run on small CPUs without modification. In below Figure e, we show the Float16 quantized model's architecture, inference time, and size changes. 
 
 ![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/float16_quantization_results.png)
 
-We also convert the CNN's weights & activation to 8-bit integers and show its architecture, inference time, and size changes below Figure f. Here, the size reduced and inference time improved since, after quantization, the inference is carried out using integer-only arithmetic.
+We also converted the CNN's weights & activation to 8-bit integers and show its architecture, inference time, and size changes below Figure f. Here, the size reduced and inference time improved since, after quantization, the inference is carried out using **Integer-only** arithmetic.
 
 ![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Int_only_quantization_results.png)
 
