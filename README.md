@@ -14,7 +14,7 @@ Both these datasets are imported via the *tf.keras.dataset.name* function with i
 
 **Pre-training Optimization** We first apply the pruning technique on CNNs and present the changes in inference time and size in below Figure c. Similarly, we also perform quantization-aware training of CNNs and show the changes in below Figure b. 
 
-![alt text]()
+![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Pre-training_optimization.png)
 
 ## Results Analysis
 
