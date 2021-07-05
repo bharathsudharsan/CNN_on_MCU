@@ -1,6 +1,6 @@
 # Multi-Component Optimization of Neural-Networks for IoT Devices
 
-Notebook for an end-to-end multi-component NN optimizer to enable the execution of high memory plus computation demanding models on MCUs, small CPUs, and AIOT boards. Post multi-component optimization, the resultant models are smaller in size, consume less power when execution, and show low latency. Our sequence is generic and applicable to any state-of-the-art models trained for anomaly detection, predictive maintenance, machine vision, etc.
+Notebook for an end-to-end multi-component NN optimization sequence to enable the execution of high memory plus computation demanding models on MCUs, small CPUs, and AIOT boards. Post multi-component optimization, the resultant models are smaller in size, consume less power when execution, and show low latency. Our sequence is generic and applicable to any state-of-the-art models trained for anomaly detection, predictive maintenance, machine vision, etc.
 
 **Note:** The .ipynb files can be loaded and viewed from the Github page, but it needs to be reloaded a couple times as the file is big. Hence, it is best to download and open via Google Colab or Jupyter Notebook, thanks.
 
