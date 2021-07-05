@@ -4,7 +4,7 @@ Notebook for an end-to-end multi-component NN optimization sequence to enable th
 
 In the notebooks, we use the standard [MNIST Fashion](https://www.kaggle.com/zalando-research/fashionmnist) (produces CNN1) and [MNIST Digits](http://yann.lecun.com/exdb/mnist/) (produces CNN2) datasets to train a basic CNN whose architecture is shown below
 
-![alt text] (https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Original_CNN_architecture.png)
+![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Original_CNN_architecture.png)
 
 Both these datasets are imported via the *tf.keras.dataset.name* function with its default train and test sets. After importing, we apply all suitable optimizers before, during, and after training CNNs and analyze the memory conservation, accuracy, and inference speedups.
 
