@@ -46,8 +46,8 @@ We implemented and performed all applicable arithmetic simplification rewrites a
 
 We performed analysis based on the experiment results and report the best optimization sequence for:
 
-**Smallest Model Size:**  When users want the smallest possible trained model, we recommend performing Graph optimized then integer with float fallback quantized version is only 22.5 KB, i.e., 12.06 x times smaller than original CNN. 
+**Smallest Model Size:**  When users want the smallest possible trained model, we recommend the *Graph optimized then integer with float fallback quantized* version. This model is only 22.5 KB, i.e., 12.06 x times smaller than the original CNN. 
 
-**Accuracy Preservation:** When the target hardware can accommodate a few extra KB, naturally we would try to fit the top-performing model. In such cases, we recommend to load and use the Graph optimized then integer only quantized version. For MNIST Fashion, the accuracy increased by 0.27 % and by 0.13 % for MNIST Digits.
+**Accuracy Preservation:** When the target hardware can accommodate a few extra KB, naturally we would try to fit the top-performing model. In such cases, we recommend to load and use the *Graph optimized then integer only quantized* version. For MNIST Fashion, the accuracy increased by 0.27 % and by 0.13 % for MNIST Digits.
 
-**Fast Inference:**  For real-time applications, we naturally tend to load and use the fastest inference results-producing models. In such cases, we recommend the Operations optimized then float16 quantized version produces the fastest unit inference results in 0.06 ms.
+**Fast Inference:**  For real-time applications, we naturally tend to load and use the fastest inference results-producing models. In such cases, we recommend the *Operations optimized then float16 quantized* version that produces the fastest unit inference results in 0.06 ms.
