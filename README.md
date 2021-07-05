@@ -36,8 +36,11 @@ We also converted the CNN's weights & activation to 8-bit integers and show its 
 
 When designing ML models for tiny IoT hardware, only limited operations can be used to keep the cost low. Over 90% arithmetic operations are used by convolutional (CONV) layers. So, we already convert floating-point operations into int-8 (fixed point) during post-training quantization. Here, as shown in Figure below, we decompose (depthwise separation) the 2-D CONVs, followed by 1-D CONVs, aiming to reduce parameters and operations count, enabling denser & deeper CNN architectures executable on low-specification hardware. When using this depth-separation concept on 3D filters, a regular 3D convolution uses C * A * B multiplications, whereas a depth-separable 3D convolution only requires C + A + B multiplications.
 
-![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/)
+![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Operations_optimization.png)
 
+In below Figure g, we show the operations optimized model's architecture, inference time, and size changes.
+
+![alt text](https://github.com/bharathsudharsan/CNN_on_MCU/blob/main/Operations_graph_optimization_results.png)
 
 ## Results Analysis
 
