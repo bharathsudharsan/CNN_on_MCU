@@ -51,3 +51,19 @@ We performed analysis based on the experiment results and report the best optimi
 **Accuracy Preservation:** When the target hardware can accommodate a few extra KB, naturally we would try to fit the top-performing model. In such cases, we recommend to load and use the *Graph optimized then integer only quantized* version. For MNIST Fashion, the accuracy increased by 0.27 % and by 0.13 % for MNIST Digits.
 
 **Fast Inference:**  For real-time applications, we naturally tend to load and use the fastest inference results-producing models. In such cases, we recommend the *Operations optimized then float16 quantized* version that produces the fastest unit inference results in 0.06 ms.
+
+**If the code is useful, please consider citing Train++ and ML-MCU papers using the BibTex entry below.**
+
+```
+@inproceedings{sudharsan2022multicomponent,
+ title = {Multi-Component Optimization and Efficient Deployment of Neural-Networks on Resource-Constrained IoT Hardware}, 
+ author = {Sudharsan, Bharath and Sundaram, Dineshkumar and Patel, Pankesh and Breslin, John G. and Ali, Muhammad Intizar and Dustdar, Schahram and Zomaya, Albert and Ranjan, Rajiv},
+ doi = {10.48550/ARXIV.2204.10183},
+ url = {https://arxiv.org/abs/2204.10183},
+ booktitle = {arXiv},
+ year = {2022}
+}
+
+  }
+  
+```
