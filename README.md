@@ -56,14 +56,10 @@ We performed analysis based on the experiment results and report the best optimi
 
 ```
 @inproceedings{sudharsan2022multicomponent,
- title = {Multi-Component Optimization and Efficient Deployment of Neural-Networks on Resource-Constrained IoT Hardware}, 
- author = {Sudharsan, Bharath and Sundaram, Dineshkumar and Patel, Pankesh and Breslin, John G. and Ali, Muhammad Intizar and Dustdar, Schahram and Zomaya, Albert and Ranjan, Rajiv},
- doi = {10.48550/ARXIV.2204.10183},
- url = {https://arxiv.org/abs/2204.10183},
- booktitle = {arXiv},
- year = {2022}
+title = {Multi-Component Optimization and Efficient Deployment of Neural-Networks on Resource-Constrained IoT Hardware}, 
+author = {Sudharsan, Bharath and Sundaram, Dineshkumar and Patel, Pankesh and Breslin, John G. and Ali, Muhammad Intizar and Dustdar, Schahram and Zomaya, Albert and Ranjan, Rajiv},
+url = {https://arxiv.org/abs/2204.10183},
+booktitle = {arXiv},
+year = {2022}
 }
-
-  }
-  
 ```
